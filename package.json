@@ -1,0 +1,23 @@
+{
+  "name": "highlighter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/highlighter.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.3",
+    "jquery": "^3.4.1",
+    "mark.js": "^8.11.1"
+  },
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  }
+}

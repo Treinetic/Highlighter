@@ -1,0 +1,60 @@
+<head>
+    <script src="../dist/highlighter.js"></script>
+    <style>
+        @font-face {
+            font-family: "FM BINDU";
+            src: url("./FM Bindumathi.TTF");
+        }
+
+        #the_text {
+            font-family: 'FM BINDU';
+        }
+    </style>
+
+    <script>
+        function highlight() {
+            var highligher = Highlighter.init();
+            var pr = highligher.highlight("yellow", 6);
+            pr.then(dataUrls => {
+                dataUrls.some(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                });
+            });
+        }
+
+        function underline() {
+            var highligher = new Highlighter.init();
+            var pr = highligher.underline("red", 1.2, 6);
+            pr.then(dataUrls => {
+                dataUrls.some(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                });
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="the_text"> wo kï fydogu jyskak jf.a wfka ukao </div>
+    <br />
+    <img src="download.jpeg" />
+    <br />
+    <br />
+    <div>On July 16, 1969, the Apollo 11 spacecraft launched from the Kennedy Space Center in Florida. Its mission was
+        to go where no human being had gone before—the moon! The crew consisted of Neil Armstrong, Michael Collins, and
+        Buzz Aldrin. The spacecraft landed on the moon in the Sea of Tranquility, a basaltic flood plain, on July 20,
+        1969. The moonwalk took place the following day. On July 21, 1969, at precisely 10:56 EDT, Commander Neil
+        Armstrong emerged from the Lunar Module and took his famous first step onto the moon’s surface. He declared,
+        “That’s one small step for man, one giant leap for mankind.” It was a monumental moment in human history!</div>
+    <br/>
+    <br/>
+    <button onclick="highlight()">Highlighting</button>
+    <button onclick="underline()">Underline</button>
+    <br/><br/>
+    <div id="show_img_here"></div>
+</body>
